@@ -33,6 +33,7 @@ jobs:
           -v $(pwd)/noname:/noname 
           -v $(pwd)/openapi_specs:/openapi_specs 
           jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:$(curl -k ${{secrets.ACTIVE_API_URL}}/backend/version) scan 
+          --analyze
           --api-url=${{ secrets.ACTIVE_API_URL }} 
           --api-token=${{ secrets.ACTIVE_API_TOKEN }} 
           --test-group-id=62f5921c-d200-4f6f-a104-29674ad30a94
